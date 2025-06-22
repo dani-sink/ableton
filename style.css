@@ -24,12 +24,13 @@ html, body {
 body {
     background-color: #f3f3f3;
     min-height: 100vh;
+    line-height: 1.5;
 }
 
 
 .page {
     background-color: #fff;
-    width: 94%;
+    width: 95%;
     margin: 0 auto;
 }
 
@@ -61,6 +62,13 @@ body {
     font-weight: 600;
 }
 
+@media screen and (max-width: 1280px) {
+    .header a {
+        font-size: 1rem;
+    }
+
+}
+
 .primary__header {
     display: flex;
     justify-content: space-between;
@@ -69,14 +77,39 @@ body {
 }
 
 
+@media screen and (max-width: 1024px) {
+    .header__left > ul > :not(:first-child) {
+        display: none;
+    }
+
+}
+
+
 .header__right {
     padding-right: 3rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .header__right {
+        display: none;
+    }
+
 }
 
 .header__right .smaller__headings {
     font-size: 1rem;
 }
 
+@media screen and (max-width: 1280px) {
+    .header__right .smaller__headings {
+        font-size: 0.9rem;
+    }
+
+}
+
+.secondary__header {
+    position: sticky;
+}
 
 .secondary__header a {
     font-size: 1rem;
@@ -104,7 +137,7 @@ body {
     /* margin: 0 8.333% 8.333% 8.33%; */
     margin-left: 8.33333vw;
     margin-right: 8.33333vw;
-    margin-bottom: 8.33333vw;
+    /* margin-bottom: 8.33333vw; */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -131,7 +164,7 @@ body {
 /* About Text */
 
 .about__text {
-    margin: 16vh auto;
+    margin: 12vh auto;
     width: 51%;
     text-align: start;
     line-height: 1.5;
@@ -153,12 +186,11 @@ body {
 /* Image Collage #1 */
 
 .image__collage {
-    max-height: 933px;
-    height: 100%;
     position: relative;
     padding: 8.333vw 0;
     /* margin-bottom: 8.333vw; */
 }
+
 
 .image__collage-container--one {
     position: relative;
@@ -186,11 +218,6 @@ body {
     margin-left: 8.333vw;
 }
 
-/* @media screen and (min-width: 1200px) {
-    .image__collage-container--two {
-        margin-left: 8.333vw;
-    }
-} */
 
 .image__collage-background {
     position: absolute;
@@ -205,5 +232,223 @@ body {
 
 
 
+/* Image Collage #2 */
 
 
+.second__image-collage {
+    width: 100%;
+    max-height: 1200px;
+    /* position: relative;
+    margin-bottom: 8.3333vw; */
+}
+
+.second__image-collage {
+    position: relative;
+    height: 75vw;
+}
+
+
+.second__image-collage-container .image--collage {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    position: relative;
+    margin-top: 8.3333vw;
+}
+
+
+.second__image__collage-background {
+    position: absolute;
+    background-color: #b6ffc0;
+    width: 58.3333vw;
+    height: 75vw;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
+.second__image-collage-container > div:not(:first-child) {
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    z-index: 1;
+}
+
+
+.second__image__collage-container--one div {
+    width: 33.3333vw;
+    height: 25vw;
+}
+
+
+.second__image__collage-container--three {
+    width: 41.66667vw;
+    height: 41.6667vw;
+    margin-left: 8.3333vw;
+    z-index: 1;
+}
+
+
+/* Decorative Image */
+
+.decorative__image-container {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 77.5vw;
+    min-height: 45.6677vw;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+/* Image Collage #3 */
+
+
+.third__image-collage {
+    width: 100%;
+    max-height: 933px;
+}
+
+.third__image-collage-container {
+    position: relative;
+    height: 58vw;
+    width: 100%;
+}
+
+.third__image-collage-container-background {
+    position: absolute;
+    background-color: #d5b3ff;
+    top: 0;
+    z-index: 0;
+    width: 66.6667vw;
+    height: 58.3333vw;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    -o-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+}
+
+.third__image-collage-container--one {
+    position: relative;
+    width: 33.333vw;
+    height: 25vw;
+    margin-left: 6.333vw;
+    margin-top: 8.333vw;
+    vertical-align: middle;
+    display: inline-block;
+    z-index: 1;
+}
+
+
+.third__image-collage-container--two {
+    margin-top: 8.333vw;
+    position: relative;
+    width: 40.6667vw;
+    height: 40.6667vw;
+    margin-left: 12.333vw;
+    vertical-align: middle;
+    display: inline-block;
+    z-index: 1;
+}
+
+
+.collage--images {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/* Careers */
+
+.careers__section {
+    width: 100%;
+    margin-bottom: 12vh;
+}
+
+.careers__section-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.careers__section-image-container {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    width: 41.6667vw;
+    height: 41.6667vw;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+.careers__section-text-container {
+    position: relative;
+    width: 41.6667vw;
+    height: 41.6667vw;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #B1C5FF ;
+}
+
+
+@media screen and (max-width: 1280px) {
+
+    .careers__section-image-container {
+        display: block;
+        width: 80vw;
+        height: 51.6667vw;
+        margin: 0 auto;
+    }
+
+    .careers__section-text-container {
+        display: block;
+        width: 80vw;
+        margin: 0 auto;
+        font-size: 1.5vw;
+    }
+}
+
+.careers__section-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.55vw;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1280px) {
+    .careers__section-text {
+        width: 85%;
+        font-size: clamp(2vw, 0.6rem, 30px);
+        margin: 0 auto;
+    }
+
+    .careers__section-text a {
+        font-size: clamp(2vw, 0.6rem, 30px);
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    .careers__section-text {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+}
+
+
+
+
+.careers__section-text a {
+    text-decoration: none;
+}
