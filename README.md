@@ -1,6 +1,6 @@
-# Ableton Landing Page Clone
+# Ableton About Page Clone
 
-A responsive recreation of the Ableton homepage using HTML and CSS. This project replicates the clean, modern design and interactive layout of the original site, focusing on visual accuracy, structure, and responsiveness across screen sizes.
+A responsive recreation of the Ableton About Page using HTML and CSS. This project replicates the clean, modern design and interactive layout of the original site, focusing on visual accuracy, structure, and responsiveness across screen sizes.
 
 🔗 **Live Site:** [https://dani-sink.github.io/ableton/](https://dani-sink.github.io/ableton/)
 
