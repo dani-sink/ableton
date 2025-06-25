@@ -32,7 +32,10 @@ body {
     background-color: #fff;
     width: 95%;
     margin: 0 auto;
+    position: relative;
 }
+
+
 
 @media screen and (max-width: 1200px) {
     .page {
@@ -55,12 +58,147 @@ body {
     list-style: none;
 }
 
-.header a {
+
+.header__left #menu-toggled, .header__left .menu-toggled {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .header__left .menu-toggled {
+        display: flex;
+    }
+}
+
+
+
+.header__left #visible-logo, .header__left #visible-menu {
+    cursor: pointer;
+    transition: color 0.5s ease-out;
+    /* z-index: 5; */
+}
+
+.header__left #menu-toggled:checked + li {
+    transform: translateY(65%);
+}
+
+.header__left .menu {
+    font-size: 1.25rem;
+    font-weight: 700;
+    
+}
+
+.header__left .menu p {
+    display: inline;
+}
+
+.header__left #menu-toggled:checked + li + li, .header__left #menu-toggled:checked + li + li + .menu-toggled {
+    z-index: 10;
+    color: #fff;
+}
+
+@media screen and (min-width: 1024px) {
+    .header__left #menu-toggled:checked + li + li {
+        color: #000;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .header ul > li:nth-child(2) {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+    }
+}
+
+.header a, .header span {
     text-decoration: none;
     color: #000;
     font-size: 1.25rem;
     font-weight: 600;
 }
+
+
+/* Dropdown Menu */
+
+
+.dropdown-menu {
+    width: 100vw;
+    left: 0;
+    top: -9%;
+    bottom: 0;
+    height: 100%;
+    max-height: 1350px;
+    position: absolute;
+    background-color: blue;
+    z-index: 10;
+    transform: translateY(-100%);
+    /* transform: translateY(100%); */
+    overflow: scroll;
+    transition: transform 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 1024px) {
+    .dropdown-menu {
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .dropdown-menu {
+        display: none;
+    }
+}
+
+
+.dropdown-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 0 0 0 1rem;
+}
+
+.dropdown-menu ul a {
+    font-size: 1.25rem;
+}
+
+.dropdown-menu .sublist {
+    padding: 0.6rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.75rem;
+}
+
+.dropdown-menu .sublist a {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.dropdown-menu .last-sublist {
+    flex-direction: row;
+}
+
+.dropdown-menu .last-sublist li {
+    flex: 1;
+    text-align: start;
+}
+
+
+
+.dropdown-menu a {
+    color: #fff;
+}
+
+.dropdown-menu .current-page {
+    color: #ff764d;
+}
+
+
+/* Header again */
 
 @media screen and (max-width: 1280px) {
     .header a {
@@ -78,10 +216,9 @@ body {
 
 
 @media screen and (max-width: 1024px) {
-    .header__left > ul > :not(:first-child) {
+    .header__left > ul > :not(:nth-child(-n+4)) {
         display: none;
     }
-
 }
 
 
@@ -133,11 +270,8 @@ body {
 
 .hero__img-container {
     position: relative;
-    
-    /* margin: 0 8.333% 8.333% 8.33%; */
     margin-left: 8.33333vw;
     margin-right: 8.33333vw;
-    /* margin-bottom: 8.33333vw; */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -492,9 +626,14 @@ body {
 .footer__middle {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 7vw;
+    column-gap: 3vw;
     row-gap: 7vh;
     align-items: start;
+    font-size: 1.2rem;
+}
+
+.footer__middle > div {
+    flex: 1 1 500px;
 }
 
 @media screen and (max-width: 1110px) {
@@ -504,16 +643,16 @@ body {
         align-items: start;
         row-gap: 5vh;
     }
+
+    .footer__middle > div {
+        flex: auto;
+    }
 }
 
 
 
-.education__container, .community__container, .language__and__location-container {
-    max-width: 30%;
-}
-
-.main__footer-list {
-    max-width: 20%;
+.main__footer-list, .education__container, .community__container, .language__and__location-container, .distributors__container {
+    max-width: 25%;
 }
 
 .main__footer-list-icons {
@@ -532,6 +671,9 @@ body {
         max-width: 100%;
         order: -1;
     }
+    .newsletter__container input {
+        margin-top: 2vh;
+    }
 }
 
 .newsletter__container input {
@@ -540,6 +682,14 @@ body {
     background-color: #eee;
     border: transparent;
     font-family: var(--default-font);
+    margin-top: 0.5rem;
+    
+}
+
+@media screen and (max-width: 1110px) {
+    .newsletter__container input {
+        margin-top: 0;
+    }
 }
 
 .newsletter__container #submit {
